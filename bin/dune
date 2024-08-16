@@ -1,6 +1,6 @@
 (executable
  (public_name introspector_test)
  (name main)
-   (preprocess (pps ppx_mina_introspector ))
+  (preprocess (staged_pps ppx_import ppx_yojson_conv ppx_mina_introspector ))
 
  (libraries ppx_mina_introspector))

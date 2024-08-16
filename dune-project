@@ -1,26 +1,23 @@
 (lang dune 3.3)
-
 (name ppx_mina_introspector)
-
 (generate_opam_files true)
-
 (source
- (github username/reponame))
+ (github meta-introspector/ocaml-libppx-import-yojson-introspector))
 
-(authors "Author Name")
+(authors "James Michael DuPont")
 
-(maintainers "Maintainer Name")
+(maintainers "James Michael DuPont")
 
-(license LICENSE)
+(license AGPL-3.0)
 
-(documentation https://url/to/documentation)
+(documentation https://github.com/meta-introspector/ocaml-libppx-import-yojson-introspector)
 
 (package
  (name ppx_mina_introspector)
- (synopsis "A short synopsis")
- (description "A longer description")
+ (synopsis "PPX Introspector for targeting mina")
+ (description "Dumping out asts in json")
  (depends ocaml dune ppx_import ppx_yojson_conv base )
  (tags
-  (topics "to describe" your project)))
+  (topics introspection ast json reflection compiler)))
 
 ; See the complete stanza docs at https://dune.readthedocs.io/en/stable/dune-files.html#dune-project
