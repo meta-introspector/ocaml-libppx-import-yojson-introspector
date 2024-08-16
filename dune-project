@@ -1,4 +1,4 @@
-(lang dune 3.14)
+(lang dune 3.3)
 
 (name ppx_mina_introspector)
 

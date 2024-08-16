@@ -11,6 +11,9 @@ doc: "https://url/to/documentation"
 bug-reports: "https://github.com/username/reponame/issues"
 depends: [
   "ocaml"
+  "ppx_yojson_conv"
+  "ppx_import"
+  "ppxlib"
   "dune" {>= "3.14"}
   "odoc" {with-doc}
 ]
