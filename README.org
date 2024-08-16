@@ -1,0 +1,173 @@
+This project leverages the libppx and ppx_import libraries to enable reflection
+over the ppxlib exposed Abstract Syntax Trees (ASTs) using yojson.
+The Ppx_yojson_conv_lib library is utilized to facilitate conversions
+between yojson data and custom data types.
+
+Specifically, this project employs the `@@deriving yojson_of`
+syntax to automatically generate functions for converting custom data types to yojson representations.
+This allows for seamless serialization and deserialization of data between different formats.
+
+By combining these libraries and tools,
+this project provides a robust and efficient way to work with ASTs and yojson data,
+making it an ideal solution for applications requiring advanced data conversion and serialization capabilities.
+
+
+#+begin_src shell
+dune build
+#+end_src
+
+produces this json currently
+#+begin_src json
+[
+  {
+    "pstr_desc": [
+      "Pstr_value",
+      [ "Nonrecursive" ],
+      [
+        {
+          "pvb_pat": {
+            "ppat_desc": [ "Ppat_construct", "FIXME", null ],
+            "ppat_loc": {
+              "loc_start": {
+                "pos_fname": "bin/main.ml",
+                "pos_lnum": 1,
+                "pos_bol": 0,
+                "pos_cnum": 4
+              },
+              "loc_end": {
+                "pos_fname": "bin/main.ml",
+                "pos_lnum": 1,
+                "pos_bol": 0,
+                "pos_cnum": 6
+              },
+              "loc_ghost": false
+            },
+            "ppat_loc_stack": [],
+            "ppat_attributes": []
+          },
+          "pvb_expr": {
+            "pexp_desc": [
+              "Pexp_apply",
+              {
+                "pexp_desc": [ "Pexp_ident", "FIXME" ],
+                "pexp_loc": {
+                  "loc_start": {
+                    "pos_fname": "bin/main.ml",
+                    "pos_lnum": 1,
+                    "pos_bol": 0,
+                    "pos_cnum": 9
+                  },
+                  "loc_end": {
+                    "pos_fname": "bin/main.ml",
+                    "pos_lnum": 1,
+                    "pos_bol": 0,
+                    "pos_cnum": 22
+                  },
+                  "loc_ghost": false
+                },
+                "pexp_loc_stack": [],
+                "pexp_attributes": []
+              },
+              [
+                [
+                  [ "Nolabel" ],
+                  {
+                    "pexp_desc": [
+                      "Pexp_constant",
+                      [
+                        "Pconst_string",
+                        "Hello, World!",
+                        {
+                          "loc_start": {
+                            "pos_fname": "bin/main.ml",
+                            "pos_lnum": 1,
+                            "pos_bol": 0,
+                            "pos_cnum": 24
+                          },
+                          "loc_end": {
+                            "pos_fname": "bin/main.ml",
+                            "pos_lnum": 1,
+                            "pos_bol": 0,
+                            "pos_cnum": 37
+                          },
+                          "loc_ghost": false
+                        },
+                        null
+                      ]
+                    ],
+                    "pexp_loc": {
+                      "loc_start": {
+                        "pos_fname": "bin/main.ml",
+                        "pos_lnum": 1,
+                        "pos_bol": 0,
+                        "pos_cnum": 23
+                      },
+                      "loc_end": {
+                        "pos_fname": "bin/main.ml",
+                        "pos_lnum": 1,
+                        "pos_bol": 0,
+                        "pos_cnum": 38
+                      },
+                      "loc_ghost": false
+                    },
+                    "pexp_loc_stack": [],
+                    "pexp_attributes": []
+                  }
+                ]
+              ]
+            ],
+            "pexp_loc": {
+              "loc_start": {
+                "pos_fname": "bin/main.ml",
+                "pos_lnum": 1,
+                "pos_bol": 0,
+                "pos_cnum": 9
+              },
+              "loc_end": {
+                "pos_fname": "bin/main.ml",
+                "pos_lnum": 1,
+                "pos_bol": 0,
+                "pos_cnum": 38
+              },
+              "loc_ghost": false
+            },
+            "pexp_loc_stack": [],
+            "pexp_attributes": []
+          },
+          "pvb_attributes": [],
+          "pvb_loc": {
+            "loc_start": {
+              "pos_fname": "bin/main.ml",
+              "pos_lnum": 1,
+              "pos_bol": 0,
+              "pos_cnum": 0
+            },
+            "loc_end": {
+              "pos_fname": "bin/main.ml",
+              "pos_lnum": 1,
+              "pos_bol": 0,
+              "pos_cnum": 38
+            },
+            "loc_ghost": false
+          }
+        }
+      ]
+    ],
+    "pstr_loc": {
+      "loc_start": {
+        "pos_fname": "bin/main.ml",
+        "pos_lnum": 1,
+        "pos_bol": 0,
+        "pos_cnum": 0
+      },
+      "loc_end": {
+        "pos_fname": "bin/main.ml",
+        "pos_lnum": 1,
+        "pos_bol": 0,
+        "pos_cnum": 38
+      },
+      "loc_ghost": false
+    }
+  }
+]
+#+end_src
