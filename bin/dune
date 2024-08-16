@@ -1,0 +1,6 @@
+(executable
+ (public_name introspector_test)
+ (name main)
+   (preprocess (pps ppx_mina_introspector ))
+
+ (libraries ppx_mina_introspector))
