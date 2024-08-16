@@ -19,7 +19,7 @@
  (name ppx_mina_introspector)
  (synopsis "A short synopsis")
  (description "A longer description")
- (depends ocaml dune)
+ (depends ocaml dune ppx_import ppx_yojson_conv base )
  (tags
   (topics "to describe" your project)))
 

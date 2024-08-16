@@ -3,7 +3,7 @@
 
 (library
  (name ppx_mina_introspector )
- (preprocess (staged_pps ppx_import ppx_yojson_conv ))
+ (preprocess (pps ppx_import ppx_yojson_conv ))
  (kind ppx_deriver)
  (libraries
    ;; opam libraries
