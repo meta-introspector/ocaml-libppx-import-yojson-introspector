@@ -1,6 +1,6 @@
 (lang dune 3.14)
 
-(name introspector_test)
+(name ppx_mina_introspector)
 
 (generate_opam_files true)
 
@@ -16,7 +16,7 @@
 (documentation https://url/to/documentation)
 
 (package
- (name introspector_test)
+ (name ppx_mina_introspector)
  (synopsis "A short synopsis")
  (description "A longer description")
  (depends ocaml dune)
