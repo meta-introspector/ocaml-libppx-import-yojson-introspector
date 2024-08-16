@@ -1,12 +1,26 @@
 open Ppxlib
 open Ppx_yojson_conv_lib.Yojson_conv.Primitives
 
-let yojson_of_loc _ _  = yojson_of_string "FIXME"
-let yojson_of_longident_loc _ = yojson_of_string "FIXME"
+let protect_ident txt =
+  Format.sprintf "ident (%s)" txt
+let protect_longident longprefix txt =
+  Format.sprintf "long ident %a.(%s)" longprefix txt
 
-let yojson_of_open_infos _ _ = yojson_of_string "type_unsupported"
-let yojson_of_include_infos _ _ = yojson_of_string "type_unsupported"
-let yojson_of_class_infos _ _ = yojson_of_string "type_unsupported"
+let rec longident = function
+  | Lident s -> protect_ident  s
+  | Ldot (y, s) ->
+let y1 = longident y in 
+let y2 = y1 ^ s in
+y2
+  | Lapply (y, s) -> (longident y) ^ (longident s)
+
+let longident_loc x = longident x.txt
+let yojson_of_loc _ _  = yojson_of_string "FIXME loc"
+let yojson_of_longident_loc x = yojson_of_string (longident_loc x)
+
+let yojson_of_open_infos _ _ = yojson_of_string "type_unsupported open_infos"
+let yojson_of_include_infos _ _ = yojson_of_string "type_unsupported include infos"
+let yojson_of_class_infos _ _ = yojson_of_string "type_unsupported class infos"
 
 [%%import:
 type rec_flag = Ppxlib__.Import.rec_flag [@@deriving  yojson_of]
@@ -92,10 +106,8 @@ and with_constraint = Ppxlib__.Import.with_constraint [@@deriving  yojson_of]
  ]
 
 let print_yojson json =
-  
-  let s= Yojson.Safe.pretty_to_string ~std:true json in
-  let s2 = "Hello, World!" ^ s in 
-  print_endline s2
+   let s= Yojson.Safe.pretty_to_string ~std:true json in
+  print_endline s
 
 let transform_one_signature (item:Ppxlib__.Import.signature) =
   (print_yojson (yojson_of_signature item));
