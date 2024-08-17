@@ -16,7 +16,7 @@
  (name ppx_mina_introspector)
  (synopsis "PPX Introspector for targeting mina")
  (description "Dumping out asts in json")
- (depends ocaml dune ppx_import ppx_yojson_conv base )
+ (depends ocaml dune ppx_import ppx_yojson_conv base ppx_sexp_conv)
  (tags
   (topics introspection ast json reflection compiler)))
 
