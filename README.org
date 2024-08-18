@@ -16,9 +16,185 @@ making it an ideal solution for applications requiring advanced data conversion 
 dune build
 #+end_src
 
-produces this json currently
+produces this json file _build/default/bin/main.ml.str
 #+begin_src json
 [
+  {
+    "pstr_desc": [
+      "Pstr_open",
+      {
+        "popen_expr": {
+          "pmod_desc": [ "Pmod_ident", "Ppxlib" ],
+          "pmod_loc": {
+            "loc_start": {
+              "pos_fname": "bin/main.ml",
+              "pos_lnum": 1,
+              "pos_bol": 0,
+              "pos_cnum": 5
+            },
+            "loc_end": {
+              "pos_fname": "bin/main.ml",
+              "pos_lnum": 1,
+              "pos_bol": 0,
+              "pos_cnum": 11
+            },
+            "loc_ghost": false
+          },
+          "pmod_attributes": []
+        },
+        "popen_override": "Fresh",
+        "popen_loc": {
+          "loc_start": {
+            "pos_fname": "bin/main.ml",
+            "pos_lnum": 1,
+            "pos_bol": 0,
+            "pos_cnum": 0
+          },
+          "loc_end": {
+            "pos_fname": "bin/main.ml",
+            "pos_lnum": 1,
+            "pos_bol": 0,
+            "pos_cnum": 11
+          },
+          "loc_ghost": false
+        },
+        "popen_attributes": []
+      }
+    ],
+    "pstr_loc": {
+      "loc_start": {
+        "pos_fname": "bin/main.ml",
+        "pos_lnum": 1,
+        "pos_bol": 0,
+        "pos_cnum": 0
+      },
+      "loc_end": {
+        "pos_fname": "bin/main.ml",
+        "pos_lnum": 1,
+        "pos_bol": 0,
+        "pos_cnum": 11
+      },
+      "loc_ghost": false
+    }
+  },
+  {
+    "pstr_desc": [
+      "Pstr_open",
+      {
+        "popen_expr": {
+          "pmod_desc": [ "Pmod_ident", "Stdlib" ],
+          "pmod_loc": {
+            "loc_start": {
+              "pos_fname": "bin/main.ml",
+              "pos_lnum": 2,
+              "pos_bol": 12,
+              "pos_cnum": 17
+            },
+            "loc_end": {
+              "pos_fname": "bin/main.ml",
+              "pos_lnum": 2,
+              "pos_bol": 12,
+              "pos_cnum": 23
+            },
+            "loc_ghost": false
+          },
+          "pmod_attributes": []
+        },
+        "popen_override": "Fresh",
+        "popen_loc": {
+          "loc_start": {
+            "pos_fname": "bin/main.ml",
+            "pos_lnum": 2,
+            "pos_bol": 12,
+            "pos_cnum": 12
+          },
+          "loc_end": {
+            "pos_fname": "bin/main.ml",
+            "pos_lnum": 2,
+            "pos_bol": 12,
+            "pos_cnum": 23
+          },
+          "loc_ghost": false
+        },
+        "popen_attributes": []
+      }
+    ],
+    "pstr_loc": {
+      "loc_start": {
+        "pos_fname": "bin/main.ml",
+        "pos_lnum": 2,
+        "pos_bol": 12,
+        "pos_cnum": 12
+      },
+      "loc_end": {
+        "pos_fname": "bin/main.ml",
+        "pos_lnum": 2,
+        "pos_bol": 12,
+        "pos_cnum": 23
+      },
+      "loc_ghost": false
+    }
+  },
+  {
+    "pstr_desc": [
+      "Pstr_open",
+      {
+        "popen_expr": {
+          "pmod_desc": [
+            "Pmod_ident", "Ppx_yojson_conv_libYojson_convPrimitives"
+          ],
+          "pmod_loc": {
+            "loc_start": {
+              "pos_fname": "bin/main.ml",
+              "pos_lnum": 3,
+              "pos_bol": 24,
+              "pos_cnum": 29
+            },
+            "loc_end": {
+              "pos_fname": "bin/main.ml",
+              "pos_lnum": 3,
+              "pos_bol": 24,
+              "pos_cnum": 71
+            },
+            "loc_ghost": false
+          },
+          "pmod_attributes": []
+        },
+        "popen_override": "Fresh",
+        "popen_loc": {
+          "loc_start": {
+            "pos_fname": "bin/main.ml",
+            "pos_lnum": 3,
+            "pos_bol": 24,
+            "pos_cnum": 24
+          },
+          "loc_end": {
+            "pos_fname": "bin/main.ml",
+            "pos_lnum": 3,
+            "pos_bol": 24,
+            "pos_cnum": 71
+          },
+          "loc_ghost": false
+        },
+        "popen_attributes": []
+      }
+    ],
+    "pstr_loc": {
+      "loc_start": {
+        "pos_fname": "bin/main.ml",
+        "pos_lnum": 3,
+        "pos_bol": 24,
+        "pos_cnum": 24
+      },
+      "loc_end": {
+        "pos_fname": "bin/main.ml",
+        "pos_lnum": 3,
+        "pos_bol": 24,
+        "pos_cnum": 71
+      },
+      "loc_ghost": false
+    }
+  },
   {
     "pstr_desc": [
       "Pstr_value",
@@ -26,19 +202,19 @@ produces this json currently
       [
         {
           "pvb_pat": {
-            "ppat_desc": [ "Ppat_construct", "FIXME", null ],
+            "ppat_desc": [ "Ppat_construct", "()", null ],
             "ppat_loc": {
               "loc_start": {
                 "pos_fname": "bin/main.ml",
-                "pos_lnum": 1,
-                "pos_bol": 0,
-                "pos_cnum": 4
+                "pos_lnum": 5,
+                "pos_bol": 73,
+                "pos_cnum": 77
               },
               "loc_end": {
                 "pos_fname": "bin/main.ml",
-                "pos_lnum": 1,
-                "pos_bol": 0,
-                "pos_cnum": 6
+                "pos_lnum": 5,
+                "pos_bol": 73,
+                "pos_cnum": 79
               },
               "loc_ghost": false
             },
@@ -49,19 +225,19 @@ produces this json currently
             "pexp_desc": [
               "Pexp_apply",
               {
-                "pexp_desc": [ "Pexp_ident", "FIXME" ],
+                "pexp_desc": [ "Pexp_ident", "print_endline" ],
                 "pexp_loc": {
                   "loc_start": {
                     "pos_fname": "bin/main.ml",
-                    "pos_lnum": 1,
-                    "pos_bol": 0,
-                    "pos_cnum": 9
+                    "pos_lnum": 5,
+                    "pos_bol": 73,
+                    "pos_cnum": 82
                   },
                   "loc_end": {
                     "pos_fname": "bin/main.ml",
-                    "pos_lnum": 1,
-                    "pos_bol": 0,
-                    "pos_cnum": 22
+                    "pos_lnum": 5,
+                    "pos_bol": 73,
+                    "pos_cnum": 95
                   },
                   "loc_ghost": false
                 },
@@ -80,15 +256,15 @@ produces this json currently
                         {
                           "loc_start": {
                             "pos_fname": "bin/main.ml",
-                            "pos_lnum": 1,
-                            "pos_bol": 0,
-                            "pos_cnum": 24
+                            "pos_lnum": 5,
+                            "pos_bol": 73,
+                            "pos_cnum": 97
                           },
                           "loc_end": {
                             "pos_fname": "bin/main.ml",
-                            "pos_lnum": 1,
-                            "pos_bol": 0,
-                            "pos_cnum": 37
+                            "pos_lnum": 5,
+                            "pos_bol": 73,
+                            "pos_cnum": 110
                           },
                           "loc_ghost": false
                         },
@@ -98,15 +274,15 @@ produces this json currently
                     "pexp_loc": {
                       "loc_start": {
                         "pos_fname": "bin/main.ml",
-                        "pos_lnum": 1,
-                        "pos_bol": 0,
-                        "pos_cnum": 23
+                        "pos_lnum": 5,
+                        "pos_bol": 73,
+                        "pos_cnum": 96
                       },
                       "loc_end": {
                         "pos_fname": "bin/main.ml",
-                        "pos_lnum": 1,
-                        "pos_bol": 0,
-                        "pos_cnum": 38
+                        "pos_lnum": 5,
+                        "pos_bol": 73,
+                        "pos_cnum": 111
                       },
                       "loc_ghost": false
                     },
@@ -119,15 +295,15 @@ produces this json currently
             "pexp_loc": {
               "loc_start": {
                 "pos_fname": "bin/main.ml",
-                "pos_lnum": 1,
-                "pos_bol": 0,
-                "pos_cnum": 9
+                "pos_lnum": 5,
+                "pos_bol": 73,
+                "pos_cnum": 82
               },
               "loc_end": {
                 "pos_fname": "bin/main.ml",
-                "pos_lnum": 1,
-                "pos_bol": 0,
-                "pos_cnum": 38
+                "pos_lnum": 5,
+                "pos_bol": 73,
+                "pos_cnum": 111
               },
               "loc_ghost": false
             },
@@ -138,15 +314,15 @@ produces this json currently
           "pvb_loc": {
             "loc_start": {
               "pos_fname": "bin/main.ml",
-              "pos_lnum": 1,
-              "pos_bol": 0,
-              "pos_cnum": 0
+              "pos_lnum": 5,
+              "pos_bol": 73,
+              "pos_cnum": 73
             },
             "loc_end": {
               "pos_fname": "bin/main.ml",
-              "pos_lnum": 1,
-              "pos_bol": 0,
-              "pos_cnum": 38
+              "pos_lnum": 5,
+              "pos_bol": 73,
+              "pos_cnum": 111
             },
             "loc_ghost": false
           }
@@ -156,15 +332,15 @@ produces this json currently
     "pstr_loc": {
       "loc_start": {
         "pos_fname": "bin/main.ml",
-        "pos_lnum": 1,
-        "pos_bol": 0,
-        "pos_cnum": 0
+        "pos_lnum": 5,
+        "pos_bol": 73,
+        "pos_cnum": 73
       },
       "loc_end": {
         "pos_fname": "bin/main.ml",
-        "pos_lnum": 1,
-        "pos_bol": 0,
-        "pos_cnum": 38
+        "pos_lnum": 5,
+        "pos_bol": 73,
+        "pos_cnum": 111
       },
       "loc_ghost": false
     }
