@@ -194,7 +194,8 @@ let print_yojson path json =
   let s= Yojson.Safe.pretty_to_string ~std:true json in
   let new_path = path in
   (*unique_file_name *)
-  print_endline ("Going to open:" ^ new_path);  
+  (*  print_endline ("Going to open:" ^ new_path);  *)
+  prerr_endline ("Going to open:" ^ new_path);
   let oc = open_out new_path in
 
   Printf.fprintf oc "%s\n" s;
