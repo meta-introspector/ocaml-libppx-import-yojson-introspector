@@ -179,7 +179,7 @@ and with_constraint = Ppxlib__.Import.with_constraint [@@deriving  yojson_of]
 
 let print_yojson path json =
   let s= Yojson.Safe.pretty_to_string ~std:true json in
-  let oc = open_out path in
+  let oc = open_out_gen [Open_creat; Open_text; Open_append] 0o640 path in
   Printf.fprintf oc "%s\n" s;
   close_out oc
 
