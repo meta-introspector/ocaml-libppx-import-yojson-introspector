@@ -177,9 +177,26 @@ and virtual_flag = Ppxlib__.Import.virtual_flag [@@deriving  yojson_of]
 and with_constraint = Ppxlib__.Import.with_constraint [@@deriving  yojson_of]
  ]
 
+let rec unique_file_name path =
+  if not (Sys.file_exists path)
+  then
+    path
+  else
+    let suffix = string_of_int (Random.int 100000) ^ ".txt" in
+    let new_path = path ^ "." ^ suffix in
+    if not (Sys.file_exists new_path)
+    then
+      new_path
+    else
+      unique_file_name path
+
 let print_yojson path json =
   let s= Yojson.Safe.pretty_to_string ~std:true json in
-  let oc = open_out_gen [Open_creat; Open_text; Open_append] 0o640 path in
+  let new_path = path in
+  (*unique_file_name *)
+  print_endline ("Going to open:" ^ new_path);  
+  let oc = open_out new_path in
+
   Printf.fprintf oc "%s\n" s;
   close_out oc
 
