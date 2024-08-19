@@ -1,3 +1,4 @@
+
 open Ppxlib
 open Ppx_yojson_conv_lib.Yojson_conv.Primitives
 
@@ -178,25 +179,38 @@ and with_constraint = Ppxlib__.Import.with_constraint [@@deriving  yojson_of]
  ]
 
 let rec unique_file_name path =
-  if not (Sys.file_exists path)
+  if not (Stdlib.Sys.file_exists path)
   then
     path
   else
-    let suffix = string_of_int (Random.int 100000) ^ ".txt" in
+    let suffix = Int.to_string (Random.int 100000) ^ ".txt" in
     let new_path = path ^ "." ^ suffix in
-    if not (Sys.file_exists new_path)
+    if not (Stdlib.Sys.file_exists new_path)
     then
       new_path
     else
       unique_file_name path
+
+let rec open_out_catch ~path ~num =
+  try
+    open_out path
+  with
+  | _ ->
+     if num > 0 then 
+       let new_path = (Printf.sprintf "%s-%d" path num)  in
+       open_out_catch ~path:new_path ~num:(num + 1)
+     else
+       let new_path = Printf.sprintf "%s-1" path in
+       open_out_catch ~path:new_path ~num:2
+
 
 let print_yojson path json =
   let s= Yojson.Safe.pretty_to_string ~std:true json in
   let new_path = path in
   (*unique_file_name *)
   (*  print_endline ("Going to open:" ^ new_path);  *)
-  prerr_endline ("Going to open:" ^ new_path);
-  let oc = open_out new_path in
+  (* prerr_endline ("Going to open:" ^ new_path); *)
+  let oc = open_out_catch ~path:new_path ~num:0 in
 
   Printf.fprintf oc "%s\n" s;
   close_out oc
@@ -221,5 +235,3 @@ let () =
        ~impl:transform_one_structure
        ~intf:transform_one_signature
        "my_transformation"
-
-

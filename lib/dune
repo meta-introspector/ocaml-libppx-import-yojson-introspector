@@ -16,6 +16,7 @@
    ;; opam libraries
    ppxlib
    base
+   unix
    yojson
    ppx_import
    ppx_yojson_conv   
