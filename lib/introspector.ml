@@ -92,7 +92,52 @@ let yojson_of_open_infos yojson_of_popen_expr x =
   `Assoc bnds
 
 
-let yojson_of_include_infos _ _ = yojson_of_string "type_unsupported include infos"
+let yojson_of_include_infos yojson_of_include_expr x =
+  let { pincl_mod; pincl_loc; pincl_attributes } = x in
+  let json(attrs) =
+    let attr = List.map (fun attr -> yojson_of_attribute2 attr) attrs in
+    `List (attr)
+  in
+  let incl_info =
+    `Assoc [
+      ("pincl_mod", yojson_of_include_expr pincl_mod);
+      ("pincl_loc", yojson_of_location pincl_loc);
+      ("pincl_attributes", json pincl_attributes)
+    ]
+  in
+  incl_info
+
+(* (\* Helper function to convert attributes*\) *)
+(* and yojson_of_attribute (attr, loc) = *)
+(*   let value = *)
+(*     match attr with *)
+(*     | { txt , _ } -> `String txt *)
+(*   in *)
+(*   `Assoc [ *)
+(*     ("txt", value); *)
+(*     ("loc", yojson_of_location loc) *)
+(*   ] *)
+
+(* (\* Helper function to convert location *\) *)
+(* and yojson_of_location x = *)
+(*   let loc_to_yojson loc = *)
+(*     `Assoc [ *)
+(*       ("start", `Assoc [ *)
+(*         ("pos_fname", `String loc.loc_start.pos_fname); *)
+(*         ("pos_lnum", `Int loc.loc_start.pos_lnum); *)
+(*         ("pos_cnum", `Int loc.loc_start.pos_cnum); *)
+(*         ("pos_bol", `Int loc.loc_start.pos_bol); *)
+(*       ]); *)
+(*       ("stop", `Assoc [ *)
+(*         ("pos_fname", `String loc.loc_end.pos_fname); *)
+(*         ("pos_lnum", `Int loc.loc_end.pos_lnum); *)
+(*         ("pos_cnum", `Int loc.loc_end.pos_cnum); *)
+(*         ("pos_bol", `Int loc.loc_end.pos_bol); *)
+(*       ]); *)
+(*     ] *)
+(*   in *)
+(*   loc_to_yojson x *)
+
 let yojson_of_class_infos _ _ = yojson_of_string "type_unsupported class infos"
 
 [%%import:

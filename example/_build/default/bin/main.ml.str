@@ -1,0 +1,626 @@
+[
+  {
+    "pstr_desc": [
+      "Pstr_open",
+      {
+        "popen_expr": {
+          "pmod_desc": [ "Pmod_ident", "Ppxlib" ],
+          "pmod_loc": {
+            "loc_start": {
+              "pos_fname": "bin/main.ml",
+              "pos_lnum": 1,
+              "pos_bol": 0,
+              "pos_cnum": 5
+            },
+            "loc_end": {
+              "pos_fname": "bin/main.ml",
+              "pos_lnum": 1,
+              "pos_bol": 0,
+              "pos_cnum": 11
+            },
+            "loc_ghost": false
+          },
+          "pmod_attributes": []
+        },
+        "popen_override": "Fresh",
+        "popen_loc": {
+          "loc_start": {
+            "pos_fname": "bin/main.ml",
+            "pos_lnum": 1,
+            "pos_bol": 0,
+            "pos_cnum": 0
+          },
+          "loc_end": {
+            "pos_fname": "bin/main.ml",
+            "pos_lnum": 1,
+            "pos_bol": 0,
+            "pos_cnum": 11
+          },
+          "loc_ghost": false
+        },
+        "popen_attributes": []
+      }
+    ],
+    "pstr_loc": {
+      "loc_start": {
+        "pos_fname": "bin/main.ml",
+        "pos_lnum": 1,
+        "pos_bol": 0,
+        "pos_cnum": 0
+      },
+      "loc_end": {
+        "pos_fname": "bin/main.ml",
+        "pos_lnum": 1,
+        "pos_bol": 0,
+        "pos_cnum": 11
+      },
+      "loc_ghost": false
+    }
+  },
+  {
+    "pstr_desc": [
+      "Pstr_open",
+      {
+        "popen_expr": {
+          "pmod_desc": [ "Pmod_ident", "Stdlib" ],
+          "pmod_loc": {
+            "loc_start": {
+              "pos_fname": "bin/main.ml",
+              "pos_lnum": 2,
+              "pos_bol": 12,
+              "pos_cnum": 17
+            },
+            "loc_end": {
+              "pos_fname": "bin/main.ml",
+              "pos_lnum": 2,
+              "pos_bol": 12,
+              "pos_cnum": 23
+            },
+            "loc_ghost": false
+          },
+          "pmod_attributes": []
+        },
+        "popen_override": "Fresh",
+        "popen_loc": {
+          "loc_start": {
+            "pos_fname": "bin/main.ml",
+            "pos_lnum": 2,
+            "pos_bol": 12,
+            "pos_cnum": 12
+          },
+          "loc_end": {
+            "pos_fname": "bin/main.ml",
+            "pos_lnum": 2,
+            "pos_bol": 12,
+            "pos_cnum": 23
+          },
+          "loc_ghost": false
+        },
+        "popen_attributes": []
+      }
+    ],
+    "pstr_loc": {
+      "loc_start": {
+        "pos_fname": "bin/main.ml",
+        "pos_lnum": 2,
+        "pos_bol": 12,
+        "pos_cnum": 12
+      },
+      "loc_end": {
+        "pos_fname": "bin/main.ml",
+        "pos_lnum": 2,
+        "pos_bol": 12,
+        "pos_cnum": 23
+      },
+      "loc_ghost": false
+    }
+  },
+  {
+    "pstr_desc": [
+      "Pstr_open",
+      {
+        "popen_expr": {
+          "pmod_desc": [
+            "Pmod_ident", "Ppx_yojson_conv_libYojson_convPrimitives"
+          ],
+          "pmod_loc": {
+            "loc_start": {
+              "pos_fname": "bin/main.ml",
+              "pos_lnum": 3,
+              "pos_bol": 24,
+              "pos_cnum": 29
+            },
+            "loc_end": {
+              "pos_fname": "bin/main.ml",
+              "pos_lnum": 3,
+              "pos_bol": 24,
+              "pos_cnum": 71
+            },
+            "loc_ghost": false
+          },
+          "pmod_attributes": []
+        },
+        "popen_override": "Fresh",
+        "popen_loc": {
+          "loc_start": {
+            "pos_fname": "bin/main.ml",
+            "pos_lnum": 3,
+            "pos_bol": 24,
+            "pos_cnum": 24
+          },
+          "loc_end": {
+            "pos_fname": "bin/main.ml",
+            "pos_lnum": 3,
+            "pos_bol": 24,
+            "pos_cnum": 71
+          },
+          "loc_ghost": false
+        },
+        "popen_attributes": []
+      }
+    ],
+    "pstr_loc": {
+      "loc_start": {
+        "pos_fname": "bin/main.ml",
+        "pos_lnum": 3,
+        "pos_bol": 24,
+        "pos_cnum": 24
+      },
+      "loc_end": {
+        "pos_fname": "bin/main.ml",
+        "pos_lnum": 3,
+        "pos_bol": 24,
+        "pos_cnum": 71
+      },
+      "loc_ghost": false
+    }
+  },
+  {
+    "pstr_desc": [
+      "Pstr_module",
+      {
+        "pmb_name": {
+          "loc2": {
+            "loc_start": {
+              "pos_fname": "bin/main.ml",
+              "pos_lnum": 5,
+              "pos_bol": 73,
+              "pos_cnum": 80
+            },
+            "loc_end": {
+              "pos_fname": "bin/main.ml",
+              "pos_lnum": 5,
+              "pos_bol": 73,
+              "pos_cnum": 83
+            },
+            "loc_ghost": false
+          },
+          "txt2": "Foo"
+        },
+        "pmb_expr": {
+          "pmod_desc": [
+            "Pmod_structure",
+            [
+              {
+                "pstr_desc": [
+                  "Pstr_type",
+                  [ "Recursive" ],
+                  [
+                    {
+                      "ptype_name": {
+                        "loc2": {
+                          "loc_start": {
+                            "pos_fname": "bin/main.ml",
+                            "pos_lnum": 6,
+                            "pos_bol": 93,
+                            "pos_cnum": 100
+                          },
+                          "loc_end": {
+                            "pos_fname": "bin/main.ml",
+                            "pos_lnum": 6,
+                            "pos_bol": 93,
+                            "pos_cnum": 103
+                          },
+                          "loc_ghost": false
+                        },
+                        "txt2": "foo"
+                      },
+                      "ptype_params": [],
+                      "ptype_cstrs": [],
+                      "ptype_kind": [ "Ptype_abstract" ],
+                      "ptype_private": [ "Public" ],
+                      "ptype_manifest": {
+                        "ptyp_desc": [ "Ptyp_constr", "int", [] ],
+                        "ptyp_loc": {
+                          "loc_start": {
+                            "pos_fname": "bin/main.ml",
+                            "pos_lnum": 6,
+                            "pos_bol": 93,
+                            "pos_cnum": 106
+                          },
+                          "loc_end": {
+                            "pos_fname": "bin/main.ml",
+                            "pos_lnum": 6,
+                            "pos_bol": 93,
+                            "pos_cnum": 109
+                          },
+                          "loc_ghost": false
+                        },
+                        "ptyp_loc_stack": [],
+                        "ptyp_attributes": []
+                      },
+                      "ptype_attributes": [],
+                      "ptype_loc": {
+                        "loc_start": {
+                          "pos_fname": "bin/main.ml",
+                          "pos_lnum": 6,
+                          "pos_bol": 93,
+                          "pos_cnum": 95
+                        },
+                        "loc_end": {
+                          "pos_fname": "bin/main.ml",
+                          "pos_lnum": 6,
+                          "pos_bol": 93,
+                          "pos_cnum": 109
+                        },
+                        "loc_ghost": false
+                      }
+                    }
+                  ]
+                ],
+                "pstr_loc": {
+                  "loc_start": {
+                    "pos_fname": "bin/main.ml",
+                    "pos_lnum": 6,
+                    "pos_bol": 93,
+                    "pos_cnum": 95
+                  },
+                  "loc_end": {
+                    "pos_fname": "bin/main.ml",
+                    "pos_lnum": 6,
+                    "pos_bol": 93,
+                    "pos_cnum": 109
+                  },
+                  "loc_ghost": false
+                }
+              }
+            ]
+          ],
+          "pmod_loc": {
+            "loc_start": {
+              "pos_fname": "bin/main.ml",
+              "pos_lnum": 5,
+              "pos_bol": 73,
+              "pos_cnum": 86
+            },
+            "loc_end": {
+              "pos_fname": "bin/main.ml",
+              "pos_lnum": 7,
+              "pos_bol": 110,
+              "pos_cnum": 113
+            },
+            "loc_ghost": false
+          },
+          "pmod_attributes": []
+        },
+        "pmb_attributes": [],
+        "pmb_loc": {
+          "loc_start": {
+            "pos_fname": "bin/main.ml",
+            "pos_lnum": 5,
+            "pos_bol": 73,
+            "pos_cnum": 73
+          },
+          "loc_end": {
+            "pos_fname": "bin/main.ml",
+            "pos_lnum": 7,
+            "pos_bol": 110,
+            "pos_cnum": 113
+          },
+          "loc_ghost": false
+        }
+      }
+    ],
+    "pstr_loc": {
+      "loc_start": {
+        "pos_fname": "bin/main.ml",
+        "pos_lnum": 5,
+        "pos_bol": 73,
+        "pos_cnum": 73
+      },
+      "loc_end": {
+        "pos_fname": "bin/main.ml",
+        "pos_lnum": 7,
+        "pos_bol": 110,
+        "pos_cnum": 113
+      },
+      "loc_ghost": false
+    }
+  },
+  {
+    "pstr_desc": [
+      "Pstr_module",
+      {
+        "pmb_name": {
+          "loc2": {
+            "loc_start": {
+              "pos_fname": "bin/main.ml",
+              "pos_lnum": 9,
+              "pos_bol": 115,
+              "pos_cnum": 122
+            },
+            "loc_end": {
+              "pos_fname": "bin/main.ml",
+              "pos_lnum": 9,
+              "pos_bol": 115,
+              "pos_cnum": 133
+            },
+            "loc_ghost": false
+          },
+          "txt2": "FooExtended"
+        },
+        "pmb_expr": {
+          "pmod_desc": [
+            "Pmod_structure",
+            [
+              {
+                "pstr_desc": [
+                  "Pstr_include",
+                  {
+                    "pincl_mod": {
+                      "pmod_desc": [ "Pmod_ident", "Foo" ],
+                      "pmod_loc": {
+                        "loc_start": {
+                          "pos_fname": "bin/main.ml",
+                          "pos_lnum": 10,
+                          "pos_bol": 143,
+                          "pos_cnum": 153
+                        },
+                        "loc_end": {
+                          "pos_fname": "bin/main.ml",
+                          "pos_lnum": 10,
+                          "pos_bol": 143,
+                          "pos_cnum": 156
+                        },
+                        "loc_ghost": false
+                      },
+                      "pmod_attributes": []
+                    },
+                    "pincl_loc": {
+                      "loc_start": {
+                        "pos_fname": "bin/main.ml",
+                        "pos_lnum": 10,
+                        "pos_bol": 143,
+                        "pos_cnum": 145
+                      },
+                      "loc_end": {
+                        "pos_fname": "bin/main.ml",
+                        "pos_lnum": 10,
+                        "pos_bol": 143,
+                        "pos_cnum": 156
+                      },
+                      "loc_ghost": false
+                    },
+                    "pincl_attributes": []
+                  }
+                ],
+                "pstr_loc": {
+                  "loc_start": {
+                    "pos_fname": "bin/main.ml",
+                    "pos_lnum": 10,
+                    "pos_bol": 143,
+                    "pos_cnum": 145
+                  },
+                  "loc_end": {
+                    "pos_fname": "bin/main.ml",
+                    "pos_lnum": 10,
+                    "pos_bol": 143,
+                    "pos_cnum": 156
+                  },
+                  "loc_ghost": false
+                }
+              }
+            ]
+          ],
+          "pmod_loc": {
+            "loc_start": {
+              "pos_fname": "bin/main.ml",
+              "pos_lnum": 9,
+              "pos_bol": 115,
+              "pos_cnum": 136
+            },
+            "loc_end": {
+              "pos_fname": "bin/main.ml",
+              "pos_lnum": 11,
+              "pos_bol": 157,
+              "pos_cnum": 160
+            },
+            "loc_ghost": false
+          },
+          "pmod_attributes": []
+        },
+        "pmb_attributes": [],
+        "pmb_loc": {
+          "loc_start": {
+            "pos_fname": "bin/main.ml",
+            "pos_lnum": 9,
+            "pos_bol": 115,
+            "pos_cnum": 115
+          },
+          "loc_end": {
+            "pos_fname": "bin/main.ml",
+            "pos_lnum": 11,
+            "pos_bol": 157,
+            "pos_cnum": 160
+          },
+          "loc_ghost": false
+        }
+      }
+    ],
+    "pstr_loc": {
+      "loc_start": {
+        "pos_fname": "bin/main.ml",
+        "pos_lnum": 9,
+        "pos_bol": 115,
+        "pos_cnum": 115
+      },
+      "loc_end": {
+        "pos_fname": "bin/main.ml",
+        "pos_lnum": 11,
+        "pos_bol": 157,
+        "pos_cnum": 160
+      },
+      "loc_ghost": false
+    }
+  },
+  {
+    "pstr_desc": [
+      "Pstr_value",
+      [ "Nonrecursive" ],
+      [
+        {
+          "pvb_pat": {
+            "ppat_desc": [ "Ppat_construct", "()", null ],
+            "ppat_loc": {
+              "loc_start": {
+                "pos_fname": "bin/main.ml",
+                "pos_lnum": 13,
+                "pos_bol": 162,
+                "pos_cnum": 166
+              },
+              "loc_end": {
+                "pos_fname": "bin/main.ml",
+                "pos_lnum": 13,
+                "pos_bol": 162,
+                "pos_cnum": 168
+              },
+              "loc_ghost": false
+            },
+            "ppat_loc_stack": [],
+            "ppat_attributes": []
+          },
+          "pvb_expr": {
+            "pexp_desc": [
+              "Pexp_apply",
+              {
+                "pexp_desc": [ "Pexp_ident", "print_endline" ],
+                "pexp_loc": {
+                  "loc_start": {
+                    "pos_fname": "bin/main.ml",
+                    "pos_lnum": 13,
+                    "pos_bol": 162,
+                    "pos_cnum": 171
+                  },
+                  "loc_end": {
+                    "pos_fname": "bin/main.ml",
+                    "pos_lnum": 13,
+                    "pos_bol": 162,
+                    "pos_cnum": 184
+                  },
+                  "loc_ghost": false
+                },
+                "pexp_loc_stack": [],
+                "pexp_attributes": []
+              },
+              [
+                [
+                  [ "Nolabel" ],
+                  {
+                    "pexp_desc": [
+                      "Pexp_constant",
+                      [
+                        "Pconst_string",
+                        "Hello, World!",
+                        {
+                          "loc_start": {
+                            "pos_fname": "bin/main.ml",
+                            "pos_lnum": 13,
+                            "pos_bol": 162,
+                            "pos_cnum": 186
+                          },
+                          "loc_end": {
+                            "pos_fname": "bin/main.ml",
+                            "pos_lnum": 13,
+                            "pos_bol": 162,
+                            "pos_cnum": 199
+                          },
+                          "loc_ghost": false
+                        },
+                        null
+                      ]
+                    ],
+                    "pexp_loc": {
+                      "loc_start": {
+                        "pos_fname": "bin/main.ml",
+                        "pos_lnum": 13,
+                        "pos_bol": 162,
+                        "pos_cnum": 185
+                      },
+                      "loc_end": {
+                        "pos_fname": "bin/main.ml",
+                        "pos_lnum": 13,
+                        "pos_bol": 162,
+                        "pos_cnum": 200
+                      },
+                      "loc_ghost": false
+                    },
+                    "pexp_loc_stack": [],
+                    "pexp_attributes": []
+                  }
+                ]
+              ]
+            ],
+            "pexp_loc": {
+              "loc_start": {
+                "pos_fname": "bin/main.ml",
+                "pos_lnum": 13,
+                "pos_bol": 162,
+                "pos_cnum": 171
+              },
+              "loc_end": {
+                "pos_fname": "bin/main.ml",
+                "pos_lnum": 13,
+                "pos_bol": 162,
+                "pos_cnum": 200
+              },
+              "loc_ghost": false
+            },
+            "pexp_loc_stack": [],
+            "pexp_attributes": []
+          },
+          "pvb_attributes": [],
+          "pvb_loc": {
+            "loc_start": {
+              "pos_fname": "bin/main.ml",
+              "pos_lnum": 13,
+              "pos_bol": 162,
+              "pos_cnum": 162
+            },
+            "loc_end": {
+              "pos_fname": "bin/main.ml",
+              "pos_lnum": 13,
+              "pos_bol": 162,
+              "pos_cnum": 200
+            },
+            "loc_ghost": false
+          }
+        }
+      ]
+    ],
+    "pstr_loc": {
+      "loc_start": {
+        "pos_fname": "bin/main.ml",
+        "pos_lnum": 13,
+        "pos_bol": 162,
+        "pos_cnum": 162
+      },
+      "loc_end": {
+        "pos_fname": "bin/main.ml",
+        "pos_lnum": 13,
+        "pos_bol": 162,
+        "pos_cnum": 200
+      },
+      "loc_ghost": false
+    }
+  }
+]
