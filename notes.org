@@ -1,0 +1,94 @@
+cat *.str | sort| uniq -c | sort -n
+
+grep -h -A2 Pexp_ident *.str | sort | uniq -c | sort -n > ident.txt
+grep -h -A2 Pexp_ident *.str | sed -e's/ //g' | sort | uniq -c | sort -n > ident.txt
+
+extract the keys
+grep -h -A2 : *.str | cut -d: -f1 | sed -e's/ //g' | sort | uniq -c | sort -n > keys.txt
+
+grep -h -A2 : *.str | cut -d: -f1 | cut '-d"' -f1 | cut -d, -f1 | sed -e's/ //g' | sort | uniq -c | sort -n > keys2.txt
+grep -h -A2 : *.str | cut -d: -f1 | cut '-d"' -f2 | cut -d, -f1 | sed -e's/ //g' | sort -u > uniq_keys.txt
+
+now look at the right hand side of the : 
+grep -h -A2 : *.str | cut -d: -f2- |    sort | uniq -c | sort -n > uniq_keys3.txt
+
+
+now look for when the left hand side is in the right hand side
+
+
+grep -F -f uniq_keys.txt uniq_keys3.txt | sort -n > uniq_keys_match.txt
+
+
+
+grep -h -o -P '([A-Z][a-z]+_[a-z]+)' *.ml.str  | sort | uniq -c | sort -n > typenames.txt
+
+look where they occur
+grep -h -F -f typenamesu.txt *.str | sed -e's/ //g' | sort | uniq -c | sort -n > type_names2.txt 
+
+* Summary
+
+First we use our new ppx yojson converter to convert each ml file into a ml.str file.
+https://github.com/meta-introspector/ocaml-libppx-import-yojson-introspector
+
+We can process a given dune project like this
+#+begin_src dune
+(executable
+ (public_name introspector_test)
+ (name main)
+  (preprocess (staged_pps ppx_import ppx_yojson_conv ppx_mina_introspector ))
+#+end_src
+
+after building the dune, it created a temporary ppx.exe we can reuse.
+For example we use the one from our augmented ${PROJECT_BASE} like this 
+#+begin_src shell
+find -name \*.ml -exec ${PROJECT_BASE}/_build/default/.ppx/1977eb4d6c4f6ad3b912f65add506a08/ppx.exe  {} > /dev/null \;
+#+end_src
+
+Now we have the json files named .str,
+
+We can inspect a given line like this, we know we are looking for Texp_construct starting on like 481
+
+#+begin_src ocaml
+    | Texp_construct (lid, _, args) ->
+        Pexp_construct (map_loc sub lid,
+          (match args with
+              [] -> None
+          | [ arg ] -> Some (sub.expr sub arg)
+          | args ->
+              Some
+                (Exp.tuple ~loc (List.map (sub.expr sub) args))
+          ))
+#+end_src
+
+#+begin_src shell
+grep -C40 '"pos_lnum": 481,'  untypeast.ml.str  | grep Texp_construct -C10
+#+end_src
+
+We can see the ocaml json here
+#+begin_src json
+                                        {
+                                          "pc_lhs": {
+                                            "ppat_desc": [
+                                              "Ppat_construct",
+                                              "Texp_construct",
+                                              [
+                                                [],
+                                                {
+                                                  "ppat_desc": [
+                                                    "Ppat_tuple",
+                                                    [
+                                                      {
+                                                        "ppat_desc": [
+                                                          "Ppat_var",
+                                                          {
+#+end_src
+
+convert to ocaml
+#+begin_src shell
+for x in *.str; do echo $x; gron $x > $x.gron; done
+#+end_src
+
+perl split.pl  | sort | uniq -c | sort -n
+
+
+cat *.ml.str.gron | perl split.pl | grep -F "pc_lhs.ppat_desc[1] " | cut -d= -f2 | sort | uniq -c | sort -n
