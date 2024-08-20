@@ -83,12 +83,96 @@ We can see the ocaml json here
                                                           {
 #+end_src
 
-convert to ocaml
+We're looking at the JSON representation of the OCaml AST, and we see the following structure:
+```
+"pc_lhs": {
+    "ppat_desc": [
+      "Ppat_construct",
+      "Texp_construct",
+```
+Let's break down what each part of this structure represents:
+
+* `pc_lhs`: This is the left-hand side of a pattern clause. In OCaml, a pattern clause is a way of specifying a pattern that can be used to match values. The left-hand side of a pattern clause is typically a pattern that is being matched against.
+* `ppat_desc`: This is a description of the pattern. In OCaml, patterns can be complex expressions that involve multiple elements, such as constructors, variables, and literals. The `ppat_desc` field provides a description of the pattern being matched.
+* `Ppat_construct`: This is a constructor pattern. In OCaml, a constructor pattern is a way of specifying a pattern that matches a specific constructor. Constructors are used to create new values of a specific type. For example, if we have a type `T` with a constructor `C`, we can use the pattern `Ppat_construct C` to match values of type `T` that are constructed using `C`.
+* `Texp_construct`: This is a type expression constructor. In OCaml, a type expression is a way of specifying a type using a combination of type constructors and variables. The `Texp_construct` constructor is used to specify a type expression that is constructed using a specific type constructor.
+
+So, in the context of our JSON output, we see that the `pc_lhs` field is specifying a pattern clause that matches a value of type `Texp_construct`. This suggests that the code is using a pattern matching construct to match values of this type.
+
+Now, let's remember what we learned in our training about each part of this structure:
+
+* We learned that `pc_lhs` is the left-hand side of a pattern clause, which is used to specify a pattern that can be matched against.
+* We learned that `ppat_desc` is a description of the pattern, which can involve multiple elements such as constructors, variables, and literals.
+* We learned that `Ppat_construct` is a constructor pattern, which is used to specify a pattern that matches a specific constructor.
+* We learned that `Texp_construct` is a type expression constructor, which is used to specify a type expression that is constructed using a specific type constructor.
+
+now we look for the definition
+
+#+begin_src ocaml
+and expression_desc =
+...
+| Texp_construct of
+      Longident.t loc * constructor_description * expression list
+#+end_src
+
+#+begin_src json
+              {
+                "pcd_name": {"loc2": {"loc_start": {"pos_fname": "./typing/typedtree.ml","pos_lnum": 110, },
+                  "txt2": "Texp_construct"                },
+                "pcd_args": [
+                  "Pcstr_tuple", [ { "ptyp_desc": [ "Ptyp_constr",],                {
+                      "ptyp_desc": [  "Ptyp_constr", "constructor_description", []  ],
+                    {"ptyp_desc": ["Ptyp_constr" "list",[{"ptyp_desc": [ "Ptyp_constr", "expression", [] ],
+#+end_src
+
+	      
+convert to gron
+
 #+begin_src shell
 for x in *.str; do echo $x; gron $x > $x.gron; done
 #+end_src
 
-perl split.pl  | sort | uniq -c | sort -n
-
-
+#+begin_src shell
 cat *.ml.str.gron | perl split.pl | grep -F "pc_lhs.ppat_desc[1] " | cut -d= -f2 | sort | uniq -c | sort -n
+#+end_src
+
+
+* geting the sig
+Now we noticed that we need pcd_name in the ocaml/parsing/parsetree.mli
+
+
+#+begin_src shell
+find -name \*.mli -exec ~/2024/08/14/dune/_build/default/.ppx/1977eb4d6c4f6ad3b912f65add506a08/ppx.exe  {} > /dev/null \;
+#+end_src
+
+
+
+#+begin_src json
+        {
+          "ptype_name": {
+            "loc2": { "loc_start": {"pos_fname": "./parsing/parsetree.mli","pos_lnum": 584,}, },
+            "txt2": "constructor_declaration"
+          },
+          "ptype_params": [],"ptype_cstrs": [],"ptype_kind": ["Ptype_record",
+            [ {"pld_name": { "txt2": "pcd_name"  }, "pld_mutable": [ "Immutable" ],"pld_type": {"ptyp_desc": [
+                    "Ptyp_constr",     "loc",
+                    [ {
+                        "ptyp_desc": [ "Ptyp_constr", "string", [] ],
+                        "ptyp_loc_stack": [],"ptyp_attributes": []     }      ]
+                  ],
+                  "ptyp_loc_stack": [],
+                  "ptyp_attributes": [] },
+                "pld_attributes": []
+              },
+#+end_src
+
+
+Now we find the first homo iconic type
+#+begin_src json
+        {  "ptype_name": { "loc2": { "loc_start": {"pos_fname": "./parsing/parsetree.mli","pos_lnum": 565,              },
+            "txt2": "label_declaration"          },
+          "ptype_kind": [  "Ptype_record",    [              {
+                "pld_name": {
+                  "txt2": "pld_name"
+                },
+#+end_src
