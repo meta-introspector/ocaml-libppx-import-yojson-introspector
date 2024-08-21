@@ -166,8 +166,24 @@ find -name \*.mli -exec ~/2024/08/14/dune/_build/default/.ppx/1977eb4d6c4f6ad3b9
               },
 #+end_src
 
+that comes from this line
+#+begin_src ocaml
+and constructor_declaration =
+    {
+     pcd_name: string loc;
+#+end_src
+
 
 Now we find the first homo iconic type
+
+from parsing/parsetree.mli
+
+#+begin_src ocaml
+and label_declaration =
+    {
+     pld_name: string loc;
+#+end_src
+
 #+begin_src json
         {  "ptype_name": { "loc2": { "loc_start": {"pos_fname": "./parsing/parsetree.mli","pos_lnum": 565,              },
             "txt2": "label_declaration"          },
@@ -175,4 +191,111 @@ Now we find the first homo iconic type
                 "pld_name": {
                   "txt2": "pld_name"
                 },
+#+end_src
+
+Now we can go to ptype_name
+
+#+begin_src ocaml
+and type_declaration =
+    {
+     ptype_name: string loc;
+
+#+end_src
+
+#+begin_src json
+        {"ptype_name": {            "loc2": {              "loc_start": {                "pos_fname": "./parsing/parsetree.mli",                "pos_lnum": 520,              },         },
+            "txt2": "type_declaration"  },
+          "ptype_kind": [ "Ptype_record",
+            [   { "pld_name": {             "loc2": {                    "loc_start": {                      "pos_fname": "./parsing/parsetree.mli",                      "pos_lnum": 522,
+            },
+           "txt2": "ptype_name"
+
+#+end_src
+
+
+the type kind is an inductive type of different records.
+it contains the label declarations
+
+and type_kind =
+  | Ptype_abstract
+  | Ptype_variant of constructor_declaration list
+  | Ptype_record of label_declaration list  (** Invariant: non-empty list *)
+  | Ptype_open
+
+  Here is a shortened json.
+#+begin_src json
+        {
+          "ptype_name": { "loc2": {  "loc_start": {  "pos_fname": "./parsing/parsetree.mli",  "pos_lnum": 559,            },
+            "txt2": "type_kind"          },
+          "ptype_kind": [
+            "Ptype_variant",        [         {
+                "pcd_name": {
+                  "loc2": {
+                    "loc_start": {
+                      "pos_fname": "./parsing/parsetree.mli",
+                      "pos_lnum": 560,                  },
+                  "txt2": "Ptype_abstract"                },
+                "pcd_args": [ "Pcstr_tuple", [] ],
+              },
+              {
+                "pcd_name": {                  "txt2": "Ptype_variant"                },
+                "pcd_args": [
+                  "Pcstr_tuple",             [                    {
+                      "ptyp_desc": [                        "Ptyp_constr",     "list",    [      {
+                            "ptyp_desc": [
+                              "Ptyp_constr", "constructor_declaration", []
+                            ],                         }                        ]                      ],                    }
+                  ]                ],
+                "pcd_res": null,
+                "pcd_attributes": []
+              },
+              {
+                "pcd_name": {
+                  "txt2": "Ptype_record"
+                },
+                "pcd_vars": [],
+                "pcd_args": [
+                  "Pcstr_tuple",
+                  [
+                    {
+                      "ptyp_desc": [
+                        "Ptyp_constr",
+                        "list",
+                        [
+                          {
+                            "ptyp_desc": [
+                              "Ptyp_constr", "label_declaration", []
+                            ],                          }                        ]                      ],                    }                  ]                ],
+                "pcd_res": null,
+                },
+                "pcd_attributes": [
+                  {
+                    "attr_name": {
+                      },
+                      "txt2": "ocaml.doc"
+                    },
+                    "attr_payload": [
+                      "PStr",
+                      [
+                        {
+                          "pstr_desc": [
+                            "Pstr_eval",
+                            {
+                              "pexp_desc": [
+                                "Pexp_constant",
+                                [
+                                  "Pconst_string",
+                                  " Invariant: non-empty list ",
+                                ]                   ],                          },             ],
+                        }                      ]                    ],                ]
+              },
+              {
+                "pcd_name": {                  "txt2": "Ptype_open"                },
+                "pcd_args": [ "Pcstr_tuple", [] ],
+                },
+              }
+            ]
+          ],
+          "ptype_private": [ "Public" ],
+        },
 #+end_src
